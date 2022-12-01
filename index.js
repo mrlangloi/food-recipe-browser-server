@@ -25,14 +25,6 @@ app.use(express.urlencoded({extended: false}));
 // route
 app.use('/recipes', require('./routes/api/recipes'));
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('./public'));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-    });
-}
-
 // connect to mongoDB
 mongoose.connect(MONGO_URI)
     .then(() => {
