@@ -1,18 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 
-const PORT = process.env.PORT || 3500;
-const MONGO_URI = `mongodb+srv://rcheung:1234asdf@cpsc2600-final-project.jghzcx2.mongodb.net/?retryWrites=true&w=majority`;
+const PORT = process.env.PORT
+const MONGO_URI = process.env.MONGO_URI
 
-/**
- * TODO
- * - add appropriate HTTP responses and status codes for each routes
- * - CITE SOURCES!!
- * - record demo video showcasing my web app
- * - deploy my app using Heroku
- */
 
 // initialize express
 const app = express();
