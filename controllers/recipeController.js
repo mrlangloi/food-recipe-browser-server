@@ -1,9 +1,10 @@
+require('dotenv').config();
 const Recipe = require('../models/Recipe')
 const mongoose = require('mongoose')
 const axios = require('axios')
 
-const APP_KEY = "01bacb1ccf1b068a991794a4d1b81907"
-const APP_ID = "e9171c06"
+const APP_KEY = process.env.APP_KEY
+const APP_ID = process.env.APP_ID
 
 // get all recipes
 const getRecipes = async (req, res) => {
